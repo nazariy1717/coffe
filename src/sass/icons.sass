@@ -1,0 +1,149 @@
+@import mixins
+
+.logo
+  @include wh(230px, 150px)
+  @include position(23px,inherit,inherit,71px)
+  background: url(../img/logo.png) no-repeat center center
+  -webkit-background-size: cover
+  background-size: cover
+  @include transition(all, 0.3s, ease-out)
+//.logo:before
+//  content: ''
+//  height: 1px
+//  left: 0
+//  width: calc(100% - 230px)
+
+.svg-icon
+  width: inherit
+  height: inherit
+  fill: inherit
+
+.icon
+  display: block
+
+.stars
+  @include wh(90px, 15px)
+  margin: 0 auto 32px auto
+
+.star
+  @include wh(16px, 16px)
+
+.triangle
+  @include wh(102px, 14px)
+
+.triangle.triangleLeft
+  -webkit-transform: rotate(180deg)
+  -moz-transform: rotate(180deg)
+  -ms-transform: rotate(180deg)
+  -o-transform: rotate(180deg)
+  transform: rotate(180deg)
+
+.arrow-with-circle
+  @include wh(140px, 15px)
+  margin: auto
+
+.scroll
+  @include wh(13px, 12px)
+  margin: auto
+
+.phone
+  @include wh(35px, 35px)
+  display: block
+
+.marker
+  @include wh(22px, 31px)
+  display: block
+
+.message
+  @include wh(41px, 33px)
+  display: block
+
+.check
+  @include wh(15px, 15px)
+  display: block
+
+.lines
+  @include wh(32px, 15px)
+  display: inline-block
+
+[class*="partners-slider__img"]
+  display: block
+  background: url(../img/sprite1x.png) no-repeat
+  @include wh(180px, 90px)
+  margin: auto
+
+//****coffee images
+[class*="coffee"]
+  position: absolute
+  z-index: 9
+
+.app-top-coffee
+  bottom: -52px
+  right: 98px
+  max-width: 240px
+
+.app-program-coffee-1
+  top: 180px
+  left: -40px
+  max-width: 175px
+
+.app-program-coffee-2
+  top: 35%
+  right: 0
+  max-width: 195px
+
+.app-gallery-coffee-1
+  left: 25px
+  top: -105px
+  width: 195px
+
+.app-gallery-coffee-2
+  right: 30px
+  bottom: -105px
+  width: 230px
+
+.app-form-coffee-1
+  top: -85px
+  left: -65px
+  max-width: 720px
+  z-index: 10
+
+.app-form-coffee-2
+  top: 18px
+  left: -70px
+
+.app-form-coffee-3
+  bottom: 30px
+  right: 0
+  max-width: 200px
+
+.cof-wood
+  position: absolute
+  right: 0
+  bottom: -190px
+  max-width: 900px
+  z-index: 2
+//***coffee images
+
+.facebook
+  @include wh(38px, 38px)
+  @include position(22px,inherit,inherit,50%)
+  display: block
+  background: url(../img/fa-facebook.png) no-repeat center center
+  -webkit-background-size: cover
+  background-size: cover
+  z-index: 9
+  transform: translateX(54px)
+
+.certificate
+  @include wh(27px, 28px)
+  margin-right: 15px
+
+.clock
+  @include wh(30px, 30px)
+  margin-right: 15px
+
+
+
+
+

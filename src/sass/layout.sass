@@ -1,0 +1,569 @@
+@import base
+@import mixins
+$yellow: #eab96a
+// *** header
+header
+  @include position(0,0,inherit,0)
+  z-index: 99
+  @include transition(all, 0.3s, ease-out)
+  backface-visibility: hidden
+  .row
+    height: 100px
+  .header-phone
+    @include position(32px,0,initial,initial)
+    transform: translateX(-15%)
+    font-size: 27px
+    color: white
+    @include bold
+
+  .hamburger
+    display: none
+
+
+header.fixed
+  position: fixed
+  background: black
+  .logo
+    transform: translateY(-48px) scale(0.65)
+header.fixed:before,header.fixed:after
+  opacity: 0
+header:before, header:after
+  content: ''
+  position: absolute
+  top: 100px
+  height: 1px
+  background: rgba(255,255,255,0.2)
+header:before
+  left: 0
+  width: 30px
+header:after
+  right: 0
+  width: calc(100% - 330px)
+
+
+
+//***nav
+.nav
+  max-width: 600px
+  width: 100%
+  margin: 0 35px
+  &__item
+    display: inline-block
+    position: relative
+  li + li:after
+    content: '\2022'
+    position: absolute
+    left: -20px
+    top: calc(50% - 10px)
+    color: white
+  &__link
+    padding: 42px 13px
+    display: block
+    color: white
+    position: relative
+    font-size: 13px
+    text-decoration: none
+    cursor: pointer
+    @include bold
+    @include transition(all, 0.3s, ease-out)
+  &__link::after
+    content: ''
+    @include position(inherit,inherit,0,0)
+    @include wh(89px,0)
+    background-color: $yellow
+    @include transition(all, 0.1s, ease-out)
+  &__link:hover
+    color: $yellow
+  &__link:hover::after
+    height: 3px
+
+
+
+//***app-top
+.app-top
+  z-index: 1
+  height: 805px
+  padding-top: 100px
+  @include background( url("../img/head_bg.png"), center center)
+  background-size: inherit
+  .top
+    padding-top: 110px
+  .top, .bottom
+    margin: auto
+    max-width: 640px
+    span
+      color: white
+      display: block
+      text-align: center
+      font-family: Georgia, sans-serif
+      font-size: 1.094em
+      font-weight: 400
+  .bottom
+    span
+      font-size: 21px
+      margin-bottom: 28px
+    &__scroll
+      @include position(inherit,0,25%,50%)
+      margin-left: -30px
+      margin-bottom: -30px
+      @include wh(61px,61px)
+      border: 1px solid white
+      border-radius: 50%
+      cursor: pointer
+      @include transition(all,0.3s,ease-out)
+    &__scroll:hover
+      background-color: rgba(0,0,0,0.3)
+    &__scroll:active
+      background-color: black
+  h1
+    color: white
+    margin-top: 40px
+    margin-bottom: 40px
+    span
+      color: $yellow
+
+
+
+
+//**** app-program
+.app-program
+  @include padding(100px,0,160px,0)
+
+.b-tab-switch
+  margin: 57px 0 95px 0
+  border-bottom: 1px solid #c6c6c6
+  position: relative
+  z-index: 10
+  .tab-switch
+    text-align: center
+    overflow: hidden
+    max-width: 865px
+    margin: auto
+    &__item
+      display: inline-block
+    &__link
+      color: #adadad
+      font-size: 21px
+      position: relative
+      letter-spacing: 2px
+      padding: 35px 0
+      width: 250px
+      display: block
+      cursor: pointer
+      @include bold
+      @include transition(all, 0.3s, ease-out)
+    &__link:after
+      content: ""
+      @include position(inherit,0,0,0)
+      background-color: #000
+      height: 4px
+      transform: translateY(5px)
+      @include transition(all, 0.3s, ease-out)
+    &__link:hover
+      color: black
+    &__link.active
+      color: black
+    &__link.active:after
+      transform: translateY(0)
+
+.b-tab-content
+  .tab-content.active
+    display: block
+  .tab-content
+    -webkit-animation: fade 0.7s
+    animation: fade 0.7s
+    display: none
+  .course
+    &__image
+      max-width: 642px
+      width: 100%
+    &__title:before
+      content: attr(data-th) ""
+      @include position(-145px,inherit,inherit,-150px)
+      z-index: -1
+      @include bold
+      font-size: 200px
+      color: #ddd
+
+    &__info
+      margin: 70px 0 20px 0
+      li
+        margin-bottom: 20px
+      li:last-child
+        margin: 0
+    &__price
+      font-weight: 700
+      font-size: 58px
+      display: block
+      margin-bottom: 25px
+      sub
+        font-size: 32px
+
+    &__program-title
+      position: relative
+      height: 90px
+      margin-top: 80px
+      margin-bottom: 30px
+    &__program-title:before
+      content: ''
+      height: 1px
+      background-color: #939393
+      width: 90%
+      left: 0
+      top: 0
+    &__list
+      li
+        color: #485260
+        line-height: 35px
+    &__wrap-table
+      margin-top: 55px
+      position: relative
+    &__table
+      margin-top: 20px
+      max-width: 695px
+      width: 100%
+      border-collapse: collapse
+      position: relative
+      z-index: 10
+      td
+        border: 1px solid black
+        color: #485260
+        padding: 10px 17px
+        vertical-align: middle
+      td + td
+        padding: 12px 10px 10px 17px
+
+
+
+//**** app-gallery
+.app-gallery
+  @include background(url("../img/gallery-bg.png"), center center)
+  @include padding(120px,0,155px,0)
+  background-color: #272626
+  z-index: 1
+  .app-title
+    .lines
+      svg
+        fill: white
+
+  .subtitle
+    margin-top: 20px
+  .flickity-viewport
+    height: 500px
+  .gallery-slider
+    margin: 75px 0
+    img
+      height: 500px
+      display: block
+
+    &__item
+      display: block
+      max-width: 100%
+      margin-right: 60px
+
+    &__nav
+      position: relative
+      max-width: 480px
+      margin: auto
+      padding: 0 15px
+    &__button
+      @include wh(68px, 68px)
+      border: 1px solid $yellow
+      background-color: transparent
+      cursor: pointer
+      position: relative
+      @include transition(all, 0.3s, ease-out)
+    &__button:before, &__button:after
+      content: ''
+      position: absolute
+      top: 50%
+      display: inline-block
+      @include transition(all, 0.3s, ease-out)
+    &__button:before
+      left: 0
+      @include wh(105px, 1px)
+      background-color: #fff
+      transform: translateX(-67px)
+    &__button:after
+      @include wh(17px, 17px)
+      transform: translate(-30px, -50%) rotateZ(45deg)
+      right: 0
+      border-top: 1px solid #fff
+      border-right: 1px solid #fff
+    &__prev:before
+      transform: translateX(27px)
+    &__prev:after
+      transform: translate(-20px, -50%) rotateZ(-135deg)
+
+    &__prev:hover:before
+      transform: translateX(11px)
+    &__prev:hover:after
+      transform: translate(-35px, -50%) rotateZ(-135deg)
+
+    &__next:hover:before
+      transform: translateX(-49px)
+    &__next:hover:after
+      transform: translate(-12px, -50%) rotateZ(45deg)
+
+    &__button:active
+      background-color: $yellow
+
+    &__slide-counter
+      strong
+        color: white
+        font-size: 30px
+        font-weight: 400
+        width: 30px
+        height: 30px
+        text-align: center
+        display: inline-block
+      span
+        color: $yellow
+        font-size: 20px
+        padding: 0 8px
+
+
+
+//*** app-testimonials
+.app-testimonials
+  @include padding(85px,0,160px,0)
+  .testimonials-slider
+    margin-top: 70px
+    &__item
+      width: 100%
+    &__item-wrapper
+      max-width: 855px
+      margin: auto
+      position: relative
+    &__img
+      @include wh(170px,170px)
+      margin: 0 auto 30px auto
+      display: block
+    &__name
+      font-size: 18px
+      display: block
+      letter-spacing: 2px
+      margin-bottom: 20px
+      text-align: center
+      @include bold
+    &__caption
+      color: #485260
+      line-height: 35px
+      text-align: center
+
+
+
+//*** app-partners
+.app-partners
+  @include padding(115px,0,172px,0)
+  background-color: rgba(0,0,0,0.05)
+  .title:after
+    content: ''
+    position: absolute
+    @include wh(222px,1px)
+    left: 50%
+    bottom: -32px
+    background-color: black
+    transform: translateX(-50%)
+  .partners-slider
+    margin-top: 110px
+    &__item
+      width: 16.666667%
+    &__img-1
+      background-position: 10px -2px
+    &__img-2
+      background-position: 0 -85px
+    &__img-3
+      background-position: -8px -181px
+    &__img-4
+      background-position: -13px -272px
+    &__img-5
+      background-position: -29px -360px
+    &__img-6
+      background-position: -25px -450px
+
+    
+
+//**** app-form
+.app-form
+  @include padding(128px,0,270px, 0)
+  .title, .subtitle
+    text-align: left
+  .title
+    margin: 0
+  .title::after
+    content: ''
+    @include position(inherit,0,-8px,0)
+    display: block
+    height: 1px
+    background-color: black
+  .column
+    padding: 0 20px
+  .form
+    margin-top: 90px
+    &__left-block
+      -webkit-box-flex: 0
+      -webkit-flex: 0 0 385px
+      -ms-flex: 0 0 385px
+      flex: 0 0 385px
+      max-width: 385px
+      margin-right: 85px
+    &__group
+      position: relative
+      overflow: hidden
+      margin-bottom: 30px
+      max-width: 400px
+      width: 100%
+    &__group:last-child
+      margin: 0
+    &__input
+      @include wh(100%,50px)
+      border-bottom: 1px solid black
+      background-color: transparent
+      font-size: 13px
+      color: black
+      line-height: 53px
+      letter-spacing: 1px
+      @include bold
+    &__label
+      position: absolute
+      bottom: 0
+      left: 0
+      color: black
+      font-size: 12px
+      letter-spacing: 1px
+      line-height: 40px
+      @include transition(all, 0.3s, ease-out)
+      @include bold
+
+    input:hover + label, input:focus + label, label:hover
+      -webkit-transform: translateY(33px)
+      transform: translateY(33px)
+    input[value] + label
+      -webkit-transform: translateY(33px)
+      transform: translateY(33px)
+    &__submit
+      position: relative
+      width: 225px
+      margin-top: 45px
+      border: 1px solid black
+      background-color: transparent
+      color: black
+      letter-spacing: 2px
+      font-size: 18px
+      border-radius: 0
+      @include transition(all, 0.3s, ease-out)
+    &__submit:before, &__submit:after
+      content: ''
+      position: absolute
+      top: 50%
+      display: inline-block
+      @include transition(all, 0.3s, ease-out)
+    &__submit:before
+      left: 50%
+      width: 50%
+      height: 1px
+      background-color: #000
+      transform: translateX(70px)
+    &__submit:after
+      @include wh(17px,17px)
+      transform: translate(67px, -50%) rotateZ(45deg)
+      right: 0
+      border-top: 1px solid #000
+      border-right: 1px solid #000
+    &__submit:hover
+      letter-spacing: 4px
+    &__submit:hover:before
+      transform: translateX(50px)
+    &__submit:hover:after
+      transform: translate(47px, -50%) rotateZ(45deg)
+
+
+
+// *** footer
+footer
+  position: relative
+  z-index: 1
+  padding-top: 130px
+  @include background( url("../img/footer_bg.png"), center center)
+
+.footer-top
+  p
+    max-width: 560px
+    text-align: justify
+    font-size: 15px
+    line-height: 27px
+    color: white
+  h2
+    line-height: 64px
+  &__row
+    margin: 0 -20px
+  &__column
+    margin-top: 50px
+    padding: 0 20px
+.footer-bottom
+  background-color: rgba(0, 0, 0, 0.38)
+  border: 1px solid white
+  margin-top: 55px
+
+.footer-sitemap
+  ul
+    margin: auto
+    height: 100px
+    li
+      a
+        padding: 0 20px
+        width: 110px
+      a:after
+        display: none
+
+.footer-contact
+  &__menu
+    width: 100%
+    position: relative
+    -webkit-column-count: 3
+    -moz-column-count: 3
+    column-count: 3
+    -webkit-column-rule: 1px outset #4d4d4d
+    -moz-column-rule: 1px outset #4d4d4d
+    column-rule: 1px outset #4d4d4d
+    border-top: 1px solid white
+    -webkit-column-gap: 1px
+    -moz-column-gap: 1px
+    column-gap: 1px
+    li:nth-child(odd)
+      border-bottom: 1px solid #4d4d4d
+  &__item
+    height: 110px
+    span,i
+      margin: auto
+      color: white
+      font-size: 15px
+      letter-spacing: 1px
+      @include bold
+
+// copyright
+.copyright
+  padding: 50px 0
+  &__list
+    li + li:before
+      content: ''
+      position: absolute
+      left: 0
+      top: -6px
+      width: 2px
+      height: 27px
+      background-color: white
+    li:nth-child(2)
+      font-size: 12px
+      letter-spacing: 1px
+      @include bold
+
+  &__item
+    color: white
+    display: inline-block
+    padding: 0 20px
+    position: relative
+    a
+      text-decoration: underline
+

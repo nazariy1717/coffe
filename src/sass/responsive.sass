@@ -1,0 +1,256 @@
+
+@import mixins
+
+@media (max-width: 1900px)
+  .header-phone
+    display: none
+
+@media (max-width: 1210px)
+    .m-row
+      margin: 0
+    .flickity-prev-next-button.next
+      right: 15px!important
+    .flickity-prev-next-button.previous
+      left: 15px!important
+
+    .footer-top__row
+      margin: 0
+    .footer-bottom
+      margin: 55px 15px 0 15px
+
+@media (max-width: 1200px)
+
+  .app-top
+    h1
+      font-size: 48px
+
+  [class*="coffee"]:not(.app-form-coffee-2)
+    display: none
+  .app-form-coffee-2
+    position: initial
+  .b-tab-content
+    .course
+      &__title:before
+        left: -250px
+
+  .app-gallery
+    .gallery-slider
+      img
+        height: 400px
+        display: block
+      &__item
+        margin-right: 30px
+
+  .app-partners
+    .partners-slider
+      &__item
+        width: 25%
+
+@media (max-width: 992px)
+  header
+    background: black!important
+    .nav
+      @include position(100px,0,0,0)
+      @include wh(100%,285px)
+      max-width: 100%
+      margin: 0
+      background: #000
+      display: none
+      &__item
+        width: 100%
+      &__link
+        padding: 20px
+        text-align: center
+      &__link::after
+        left: 50%
+        transform: translateX(-50%)
+    .hamburger
+      display: block
+      @include wh(50px,50px)
+      margin: 0 30px
+      overflow: hidden
+      cursor: pointer
+      position: relative
+      span
+        position: absolute
+        @include wh(30px,1px)
+        background: #eab96a
+        display: block
+        margin-top: 6px
+        margin-bottom: 7px
+        @include transition(all,0.3s,ease-out)
+      span:nth-child(1)
+        top: 15px
+        right: 9px
+      span:nth-child(2)
+        top: 24px
+        right: 9px
+      span:nth-child(3)
+        top: 34px
+        right: 9px
+
+    .hamburger-close
+      span:nth-child(1)
+        top: 24px
+        right: 9px
+        transform: rotate(40deg)
+      span:nth-child(2)
+        opacity: 0
+      span:nth-child(3)
+        top: 24px
+        right: 9px
+        transform: rotate(-40deg)
+
+
+    .logo
+      left: -15px
+      transform: translateY(-48px) scale(0.65)
+  header:before
+    display: none
+  header:after
+    width: 100%
+
+
+
+  .app-form-coffee-2
+    display: none
+
+  .app-form
+    padding-bottom: 130px
+    .column:first-child
+      display: none
+    .form__left-block
+      margin-right: 55px
+
+  .app-partners
+    .partners-slider
+      &__item
+        width: 33.333333%
+
+@media (max-width: 768px)
+  .b-tab-switch
+    .tab-switch
+      max-width: 500px
+      &__link
+        width: auto
+  .b-tab-content
+    .course
+      &__title
+        margin-top: 30px
+      &__title:before
+        display: none
+  .cof-wood
+    display: none
+
+  .app-gallery
+    .gallery-slider
+      img
+        height: 300px
+      &__item
+        margin-right: 15px
+
+  .testimonials-slider, .partners-slider
+    padding: 0 30px
+
+  .app-partners
+    .partners-slider
+      &__item
+        width: 50%
+
+  .footer-top
+    p
+      max-width: 100%
+
+  .copyright__item
+    padding: 0 10px
+  .copyright__list li + li:before
+    display: none
+
+@media (max-width: 575px)
+
+  .app-top
+    .top
+      padding-top: 50px
+      &__subtitle
+        i
+          display: none
+        span
+          width: 100%
+    h1
+      font-size: 40px
+    .bottom__scroll
+      bottom: 15%
+
+  .app-title
+    .title
+      font-size: 35px
+      letter-spacing: 2px
+      line-height: 45px
+      white-space: initial
+    i
+      display: none
+
+  .b-tab-switch
+    .tab-switch
+      max-width: 100%
+      padding: 0 15px
+      &__link
+        width: auto
+        font-size: 18px
+
+  .app-gallery
+    .gallery-slider
+      img
+        height: 250px
+      &__slide-counter
+        position: relative
+        top: -50px
+
+  .app-partners
+    .partners-slider__item
+      width: 100%
+
+  .app-form
+    padding-bottom: 130px
+    .column:first-child
+      display: none
+    .form__left-block
+      margin-right: 0
+      -webkit-box-flex: 0
+      -webkit-flex: 0 0 280px
+      -ms-flex: 0 0 280px
+      flex: 0 0 280px
+      max-width: 280px
+
+  .app-partners
+    .partners-slider
+      &__item
+        width: 100%
+
+  .footer-sitemap
+    ul
+      height: initial
+      li
+        display: block
+        width: 100%
+        a
+          padding: 20px
+          margin: auto
+          text-align: center
+      li + li:after
+        display: none
+
+  .footer-contact__menu
+    -webkit-column-count: 1
+    -moz-column-count: 1
+    column-count: 1
+    li:nth-child(odd)
+      border-bottom: 0
+    li:nth-child(even)
+      border-bottom: 1px solid #4d4d4d
+  .footer-contact__item
+    height: 50px
+
+  .copyright__item
+    margin-top: 5px
+    text-align: center
